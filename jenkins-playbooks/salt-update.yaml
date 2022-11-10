@@ -1,0 +1,8 @@
+---
+- name: SALT-CALL STATE.HIGHSTATE
+  hosts: all
+  tasks: 
+  
+  - name: To run salt on all hosts
+    shell: |
+      salt-call state.highstate
