@@ -1,1 +1,17 @@
-#test
+---
+- name: To update repos(local)
+  hosts: all
+  tasks: 
+  
+  - name: It will remove and readd the repofile and run createrepo/repolist to populate newly addded files
+    shell: |
+      cat <<EOF > /etc/yum.repos.d/local.repo
+      #Test
+      EOF
+    	createrepo /var/www/html/pkgs/
+      yum repolist all
+      cat <<EOF > /etc/yum.repos.d/local.repo
+      #Test
+      EOF
+      createrepo /var/www/html/pkgs/
+      yum repolist all
