@@ -3,7 +3,7 @@
   hosts: salt
   tasks: 
   
-  - name: To run salt on all hosts #test
+  - name: To run salt on all hosts 
     shell: |
       cd /root/git/salt/
       git stash
