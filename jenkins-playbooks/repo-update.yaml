@@ -1,17 +1,35 @@
 ---
 - name: To update repos(local)
   hosts: all
-  tasks: 
-  
+  tasks:
+
   - name: It will remove and readd the repofile and run createrepo/repolist to populate newly addded files
     shell: |
       cat <<EOF > /etc/yum.repos.d/local.repo
-      #Test
+      [remote]
+
+      name=RHEL Apache
+
+      baseurl=http://ftp:80/
+
+      enabled=1
+
+      gpgcheck=0
+
       EOF
-    	createrepo /var/www/html/pkgs/
+      createrepo /var/www/html/pkgs/
       yum repolist all
       cat <<EOF > /etc/yum.repos.d/local.repo
-      #Test
+      [remote]
+
+      name=RHEL Apache
+
+      baseurl=http://ftp:80/pkgs
+
+      enabled=1
+
+      gpgcheck=0
+
       EOF
       createrepo /var/www/html/pkgs/
       yum repolist all
