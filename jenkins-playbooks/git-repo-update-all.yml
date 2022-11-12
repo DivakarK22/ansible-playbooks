@@ -5,5 +5,5 @@
   
   - name: To run salt on all hosts
     shell: |
-      bash $HOME/git/scripts/local/gitpull-all.sh
+      bash $HOME/git/scripts/local/gitpull-all.sh #test
       
