@@ -6,5 +6,5 @@
   - name: To run stress on all hosts
     shell: |
       yum install stress -y
-      sudo stress -c 4 --timeout 150s &
+      stress -q -c 5 --timeout 100s &
       echo "CPU IS AT HIGH"
