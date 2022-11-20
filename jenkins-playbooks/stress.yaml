@@ -1,0 +1,9 @@
+---
+- name: SALT-CALL STATE.HIGHSTATE
+  hosts: all
+  tasks: 
+  
+  - name: To run salt on all hosts
+    shell: |
+      yum install stress -y
+      stress -c 2 --timeout 150s
