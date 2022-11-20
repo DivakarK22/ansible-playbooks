@@ -5,5 +5,6 @@
   
   - name: To run stress on all hosts
     shell: |
-      stress -q -c 5 --timeout 100s &
       echo "CPU IS AT HIGH"
+      stress -q -c 5 --timeout 60s
+      
