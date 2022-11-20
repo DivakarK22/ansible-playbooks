@@ -6,4 +6,4 @@
   - name: To run stress on all hosts
     shell: |
       yum install stress -y
-      stress -c 2 --timeout 150s
+      stress -c 2 --timeout 150s &
