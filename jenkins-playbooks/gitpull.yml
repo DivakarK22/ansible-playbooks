@@ -1,0 +1,12 @@
+---
+- name: SALT-CALL STATE.HIGHSTATE
+  hosts: all
+  tasks: 
+  
+  - name: To run salt on all hosts
+    shell: |
+      mkdir  $HOME/git
+      cd git
+      git clone https://github.com/Divakar22/scripts.git
+      cd /root/git/scripts/local
+      bash gitpull-all.sh
