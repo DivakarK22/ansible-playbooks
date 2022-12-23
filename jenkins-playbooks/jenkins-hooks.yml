@@ -7,4 +7,4 @@
     shell: |
       cd /root/git/jenkins-job-builder
       git pull
-      jenkins-jobs --conf /root/jenkins_jobs.ini update /root/git/jenkins-job-builder/salt.yaml
+      bash jobupdate.sh
