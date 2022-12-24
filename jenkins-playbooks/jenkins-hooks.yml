@@ -7,4 +7,4 @@
     shell: |
       cd /root/git/jenkins-job-builder
       git pull
-      /root/.local/bin/jenkins-jobs --conf /root/jenkins_jobs.ini update /root/git/jenkins-job-builder/jobs.yaml
+      /root/.local/bin/jenkins-jobs --conf /root/jenkins_jobs.ini update /root/git/jenkins-job-builder/jobs/jobs.yaml
