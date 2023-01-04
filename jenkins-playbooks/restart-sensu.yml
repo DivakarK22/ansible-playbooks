@@ -5,4 +5,5 @@
   
   - name: To run salt on all hosts 
     shell: |
-       /root/git/scripts/setups/restart.sh
+      cd /root/git/scripts/setups/
+      bash restart.sh
