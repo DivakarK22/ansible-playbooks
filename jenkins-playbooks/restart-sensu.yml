@@ -1,0 +1,8 @@
+---
+- name: salt pull
+  hosts: sensu-core
+  tasks: 
+  
+  - name: To run salt on all hosts 
+    shell: |
+       /root/git/scripts/setups/restart.sh
