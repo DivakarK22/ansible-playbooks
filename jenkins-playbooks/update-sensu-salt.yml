@@ -1,0 +1,8 @@
+---
+- name: SALT-CALL STATE.HIGHSTATE
+  hosts: grafana
+  tasks: 
+  
+  - name: To run salt on grafana
+    shell: |
+      salt-call state.highstate
