@@ -5,4 +5,4 @@
   
   - name: To run salt on all hosts
     shell: |
-      salt-call state.highstate
+      sudo salt-call state.highstate
