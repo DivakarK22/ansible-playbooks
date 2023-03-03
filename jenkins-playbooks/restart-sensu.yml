@@ -5,5 +5,5 @@
   
   - name: To run salt on all hosts 
     shell: |
-      cd /root/git/scripts/setups/
+      cd /home/vagrant/sensu/
       bash restart.sh
