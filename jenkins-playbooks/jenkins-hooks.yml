@@ -1,10 +1,10 @@
 ---
 - name: JJB
   hosts: jenkins
-  tasks: 
-  
+  tasks:
+
   - name: JJB
     shell: |
-      cd /root/git/jenkins-job-builder
-      git pull
+      cd /home/vagrant/git/jenkins-job-builder
+      sudo git pull
       bash jobupdate.sh
