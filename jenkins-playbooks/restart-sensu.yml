@@ -1,6 +1,6 @@
 ---
 - name: salt pull
-  hosts: sensu-core
+  hosts: sensu
   tasks: 
   
   - name: To run salt on all hosts 
