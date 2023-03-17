@@ -5,6 +5,4 @@
 
   - name: JJB
     shell: |
-      cd /home/vagrant/git/jenkins-job-builder
-      sudo git pull
-      bash jobupdate.sh
+       bash /home/vagrant/git/jenkins-job-builder/jobupdate.sh
