@@ -1,9 +1,18 @@
 ---
-- hosts: 
+- name: user module demo
+  hosts: all
   become: true
   tasks:
-  - name: Creating the User
-    user: name=testuser password=testuser123 groups=ansible shell=/bin/bash
-
-  - name: Removing the User
-    user: name=testuser state=absent remove=yes force=yes
+    - name: user example present
+      ansible.builtin.user:
+        name: example
+        password: "{{ 'password' | password_hash('sha512', 'mysecretsalt') }}"
+        groups:
+          - wheel
+        state: "present"
+        shell: "/bin/bash"
+        system: false
+        create_home: true
+        home: "/home/example"
+        comment: "Ansible example"
+        generate_ssh_key: true
