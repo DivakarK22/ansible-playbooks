@@ -9,5 +9,5 @@
       mkdir git
       cd git
       git clone https://github.com/DivakarK22/scripts.git
-      bash $HOME/git/scripts/local/gitpull-all.sh #test
+      bash $HOME/git/scripts/shell/gitpull-all.sh
       
