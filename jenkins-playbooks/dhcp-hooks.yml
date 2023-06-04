@@ -1,0 +1,9 @@
+---
+- name: dhcp-hooks
+  hosts: dhcp
+  tasks:
+
+  - name: dhcp
+    shell: |
+       cd /etc/dhcp/
+       sudo git pull
