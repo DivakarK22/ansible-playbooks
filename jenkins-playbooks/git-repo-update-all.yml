@@ -1,5 +1,5 @@
 ---
-- name: SALT-CALL STATE.HIGHSTATE
+- name: git-repo-hooks
   hosts: all
   tasks: 
   
