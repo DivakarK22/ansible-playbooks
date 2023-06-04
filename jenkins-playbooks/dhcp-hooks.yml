@@ -5,5 +5,4 @@
 
   - name: dhcp
     shell: |
-       cd /etc/dhcp/
-       sudo git pull
+       bash /root/git/scripts/shell/dhcp-hooks.sh
