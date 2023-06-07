@@ -11,7 +11,7 @@
        cp /root/git/pxe-boot/pxelinux.cfg/ /var/lib/tftpboot/pxelinux.cfg/
        sudo systemctl restart {xinetd,tftp,vsftpd}
 - name: pxe-hooks-ks
-  hosts: pxe
+  hosts: ftp
   tasks:
 
   - name: pxe-hooks-update-ks-and-pxe-cfgs
