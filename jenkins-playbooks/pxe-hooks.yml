@@ -1,0 +1,19 @@
+---
+- name: pxe-hooks
+  hosts: pxe
+  tasks:
+
+  - name: pxe-hooks-update-ks-and-pxe-cfgs
+    shell: |
+       rm -rf /var/lib/tftpboot/pxelinux.cfg/*
+       cp /root/git/pxe-boot/pxelinux.cfg/ /var/lib/tftpboot/pxelinux.cfg/
+       sudo systemctl restart {xinetd,tftp,vsftpd}
+- name: pxe-hooks-ks
+  hosts: pxe
+  tasks:
+
+  - name: pxe-hooks-update-ks-and-pxe-cfgs
+    shell: |
+       rm -rf /var/www/html/ks.*
+       cp /home/vagrant/git/pxe-boot/ks/* /var/www/html/
+       sudo systemctl restart httpd
