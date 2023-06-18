@@ -1,0 +1,8 @@
+---
+- name: ftp-nfs-refresh
+  hosts: ftp
+  tasks:
+
+  - name: refreshing svc
+    shell: |
+       bash /root/git/scripts/shell/ftp_refresh.sh
