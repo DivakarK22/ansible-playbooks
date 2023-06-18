@@ -6,3 +6,10 @@
   - name: refreshing svc
     shell: |
        bash /root/git/scripts/shell/ftp_refresh.sh
+- name: mount -a
+  hosts: all
+  tasks:
+
+  - name: mount nfs
+    shell: |
+       sudo mount -a
