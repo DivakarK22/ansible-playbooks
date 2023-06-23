@@ -1,6 +1,6 @@
 ---
 - name: SALT-CALL STATE.HIGHSTATE
-  hosts: sensu
+  hosts: sensu-master
   tasks: 
   
   - name: To run salt on grafana

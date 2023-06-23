@@ -1,6 +1,6 @@
 ---
 - name: ftp-nfs-refresh
-  hosts: ftp
+  hosts: ftp-master
   tasks:
 
   - name: refreshing svc

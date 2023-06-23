@@ -1,6 +1,6 @@
 ---
 - name: salt pull
-  hosts: salt
+  hosts: salt-master
   tasks: 
   
   - name: To run salt on all hosts 

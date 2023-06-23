@@ -1,6 +1,6 @@
 ---
 - name: JJB
-  hosts: jenkins
+  hosts: jenkins-master
   tasks:
 
   - name: JJB

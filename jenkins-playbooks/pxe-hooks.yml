@@ -1,6 +1,6 @@
 ---
 - name: pxe-hooks
-  hosts: pxe
+  hosts: pxe-master
   tasks:
 
   - name: pxe-hooks-update-ks-and-pxe-cfgs

@@ -1,6 +1,6 @@
 ---
 - name: dhcp-hooks
-  hosts: dhcp
+  hosts: dhcp-master
   tasks:
 
   - name: dhcp
