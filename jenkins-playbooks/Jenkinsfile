@@ -3,8 +3,8 @@ pipeline {
         label 'alma-ansible'
     }
     parameters {
-        string(name: 'IP', defaultValue: '192.168.1.10', description: 'Enter IP')
-        string(name: 'Playbook', defaultValue: 'test.yml', description: 'Enter Playbook Name')
+        string(name: 'PARAMETER1', defaultValue: 'Value1', description: 'Enter parameter 1')
+        string(name: 'PARAMETER2', defaultValue: 'Value2', description: 'Enter parameter 2')
     }
     stages {
         stage('Checkout and Pull') {
@@ -17,8 +17,13 @@ pipeline {
         stage('Updating Inventory file') {
             steps {
                 script {
-                    def param1 = params.IP
-                    def param2 = params.Playbook
+                     // Access the values of the parameters
+                    def param1 = params.PARAMETER1
+                    def param2 = params.PARAMETER2
+                    
+                    // Print the values
+                    echo "Parameter 1: ${param1}"
+                    echo "Parameter 2: ${param2}"
                     // Define multi-line text
                     def multilineText = '''
                     [all:vars]
