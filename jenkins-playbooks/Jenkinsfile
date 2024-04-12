@@ -14,11 +14,9 @@ pipeline {
             steps {
                 sh 'rm -rf /etc/ansible/hosts || true'
                     // Define multi-line text
-                sh """
-                    cat <<EOF > example.txt
+                sh 'cat <<EOF > example.txt
                     192.168.1.10
-                    EOF
-                """
+                EOF'
                 sh "cat /etc/ansible/hosts"
             }
         }
