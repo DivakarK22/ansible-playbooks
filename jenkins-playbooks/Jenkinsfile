@@ -15,7 +15,9 @@ pipeline {
                 script {
                     // Define multi-line text
                     def multilineText = '''
-                        192.168.1.10
+                    [all:vars]
+                    ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+                    192.168.1.10
                     '''
                     
                     // Write multi-line text to a file
