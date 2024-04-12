@@ -10,6 +10,14 @@ pipeline {
                 }
             }
         }
+        stage('Updating Inventory file') {
+            steps {
+                sh 'rm -rf /etc/ansible/hosts || true'
+                sh 'cat <<EOF >/etc/ansible/hosts
+                    $ip
+                    EOF '
+            }
+        }
         stage('Tasks') {
             steps {
                 sh 'ansible-playbook $WORKSPACE/jenkins-playbooks/test.yml  || true'
