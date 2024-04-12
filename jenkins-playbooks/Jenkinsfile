@@ -14,15 +14,11 @@ pipeline {
             steps {
                 sh 'rm -rf /etc/ansible/hosts || true'
                     // Define multi-line text
-                def multilineText = """
+                sh """
+                    cat <<EOF > example.txt
                     192.168.1.10
+                    EOF
                 """
-                    
-                    // Write multi-line text to a file
-                writeFile file: '/etc/ansible/hosts', text: multilineText
-                    
-                    // Verify the file content
-                echo "File content:"
                 sh "cat /etc/ansible/hosts"
             }
         }
