@@ -12,12 +12,18 @@ pipeline {
         }
         stage('Updating Inventory file') {
             steps {
-                sh 'rm -rf /etc/ansible/hosts || true'
+                script {
                     // Define multi-line text
-                sh 'cat <<EOF > example.txt
-                    192.168.1.10
-                EOF'
-                sh "cat /etc/ansible/hosts"
+                    def multilineText = '''
+                        192.168.1.10
+                    '''
+                    
+                    // Write multi-line text to a file
+                    writeFile file: '/etc/ansible/hosts', text: multilineText
+                    
+                    // Verify the file content
+                    echo "File content:"
+                    sh "cat /etc/ansible/hosts"
             }
         }
         stage('Tasks') {
