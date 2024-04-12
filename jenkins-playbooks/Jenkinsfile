@@ -5,14 +5,14 @@ pipeline {
     stages {
         stage('Checkout and Pull') {
             steps {
-                dir('$HOME/ansible-playbooks') {
+                dir('$WORKSPACE/ansible-playbooks') {
                     git branch: 'main', url: 'https://github.com/DivakarK22/ansible-playbooks.git'
                 }
             }
         }
         stage('Tasks') {
             steps {
-                sh 'ansible-playbooks $HOME/ansible-playbooks/jenkins-playbooks/test.yml  || true'
+                sh 'ansible-playbooks $WORKSPACE/ansible-playbooks/jenkins-playbooks/test.yml  || true'
             }
         }          
     }
