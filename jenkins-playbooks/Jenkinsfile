@@ -24,6 +24,7 @@ pipeline {
                     // Verify the file content
                     echo "File content:"
                     sh "cat /etc/ansible/hosts"
+                }
             }
         }
         stage('Tasks') {
