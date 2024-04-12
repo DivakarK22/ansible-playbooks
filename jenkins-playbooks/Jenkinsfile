@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Tasks') {
             steps {
-                sh 'ansible-playbooks $WORKSPACE/ansible-playbooks/jenkins-playbooks/test.yml  || true'
+                sh 'ansible-playbook $WORKSPACE/ansible-playbooks/jenkins-playbooks/test.yml  || true'
             }
         }          
     }
