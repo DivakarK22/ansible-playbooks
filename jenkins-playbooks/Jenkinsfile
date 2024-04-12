@@ -18,7 +18,7 @@ pipeline {
                     [all:vars]
                     ansible_ssh_common_args='-o StrictHostKeyChecking=no'
                     [all]
-                    192.168.1.10
+                    192.168.1.10 ansible_user=root ansible_password=123
                     '''.stripIndent()
                     
                     // Write multi-line text to a file
