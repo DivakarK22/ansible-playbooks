@@ -1,0 +1,51 @@
+---
+- name: Check System Information
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Packages
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - git
+        - docker
+        - nano
+        - htop
+
+    - name: Check Package Versions
+      shell: "rpm -q {{ item }}"
+      register: package_versions
+      changed_when: false
+      failed_when: false
+      with_items:
+        - git
+        - docker
+        - nano
+        - htop
+
+    - name: Print Package Versions
+      debug:
+        msg: "Package {{ item.item }} version is {{ item.stdout }}"
+      loop: "{{ package_versions.results }}"
+      when: item.stdout != 'not installed'
+
+    - name: Get Linux OS Version
+      shell: "cat /etc/os-release | grep PRETTY_NAME | cut -d'=' -f2 | tr -d '\"'"
+      register: os_version
+      changed_when: false
+      failed_when: false
+
+    - name: Print Linux OS Version
+      debug:
+        msg: "Linux OS version is {{ os_version.stdout }}"
+
+    - name: Get Uptime
+      command: uptime
+      register: uptime_info
+      changed_when: false
+      failed_when: false
+
+    - name: Print Uptime
+      debug:
+        msg: "Uptime: {{ uptime_info.stdout }}"
