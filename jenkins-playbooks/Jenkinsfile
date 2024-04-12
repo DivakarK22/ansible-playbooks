@@ -29,7 +29,7 @@ pipeline {
                     [all:vars]
                     ansible_ssh_common_args='-o StrictHostKeyChecking=no'
                     [all]
-                    param1 ansible_user=root ansible_password=123
+                    ${param1} ansible_user=root ansible_password=123
                     """.stripIndent()
                     
                     // Write multi-line text to a file
@@ -43,7 +43,15 @@ pipeline {
         }
         stage('Tasks') {
             steps {
-                sh 'ansible-playbook $WORKSPACE/jenkins-playbooks/param2  || true'
+                script {
+                    def param1 = params.PARAMETER1
+                    def param2 = params.PARAMETER2
+                    
+                    // Print the values
+                    echo "Parameter 1: ${param1}"
+                    echo "Parameter 2: ${param2}"
+                    sh "ansible-playbook $WORKSPACE/jenkins-playbooks/${param2}  || true"
+                }
             }
         }          
     }
