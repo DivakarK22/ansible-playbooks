@@ -2,6 +2,10 @@ pipeline {
     agent {
         label 'alma-ansible'
     }
+    parameters {
+        string(name: 'IP', defaultValue: '192.168.1.10', description: 'Enter IP')
+        string(name: 'Playbook', defaultValue: 'test.yml', description: 'Enter Playbook Name')
+    }
     stages {
         stage('Checkout and Pull') {
             steps {
