@@ -24,7 +24,7 @@ pipeline {
                     [all:vars]
                     ansible_ssh_common_args='-o StrictHostKeyChecking=no'
                     [all]
-                    ${IP} ansible_user=root ansible_password=123
+                    ${param1} ansible_user=root ansible_password=123
                     '''.stripIndent()
                     
                     // Write multi-line text to a file
@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Tasks') {
             steps {
-                sh 'ansible-playbook $WORKSPACE/jenkins-playbooks/${playbook}  || true'
+                sh 'ansible-playbook $WORKSPACE/jenkins-playbooks/${param2}  || true'
             }
         }          
     }
