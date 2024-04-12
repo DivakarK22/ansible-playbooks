@@ -25,12 +25,12 @@ pipeline {
                     echo "Parameter 1: ${param1}"
                     echo "Parameter 2: ${param2}"
                     // Define multi-line text
-                    def multilineText = '''
+                    def multilineText = """
                     [all:vars]
                     ansible_ssh_common_args='-o StrictHostKeyChecking=no'
                     [all]
                     param1 ansible_user=root ansible_password=123
-                    '''.stripIndent()
+                    """.stripIndent()
                     
                     // Write multi-line text to a file
                     writeFile file: '/etc/ansible/hosts', text: multilineText
