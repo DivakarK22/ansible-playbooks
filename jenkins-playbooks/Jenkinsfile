@@ -3,8 +3,8 @@ pipeline {
         label 'alma-ansible'
     }
     parameters {
-        string(name: 'PARAMETER1', defaultValue: 'Value1', description: 'Enter parameter 1')
-        string(name: 'PARAMETER2', defaultValue: 'Value2', description: 'Enter parameter 2')
+        string(name: 'PARAMETER1', defaultValue: 'IP_ADDR', description: 'Enter parameter 1')
+        string(name: 'PARAMETER2', defaultValue: 'PLAYBOOK_FILE', description: 'Enter parameter 2')
     }
     stages {
         stage('Checkout and Pull') {
