@@ -3,11 +3,17 @@
   hosts: all
   become: true
   tasks:
-    - name: Install Grafana, Prometheus, and Loki packages
-      community.general.yum:
-        name: "{{ item }}"
+    - name: Install Grafana package
+      ansible.builtin.yum:
+        name: grafana
         state: present
-      loop:
-        - grafana
-        - prometheus
-        - loki
+
+    - name: Install Prometheus package
+      ansible.builtin.yum:
+        name: prometheus
+        state: present
+
+    - name: Install Loki package
+      ansible.builtin.yum:
+        name: loki
+        state: present
