@@ -1,0 +1,13 @@
+---
+- name: Install Grafana, Prometheus, and Loki
+  hosts: all
+  become: true
+  tasks:
+    - name: Install Grafana, Prometheus, and Loki packages
+      community.general.yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - grafana
+        - prometheus
+        - loki
